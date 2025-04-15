@@ -1,1 +1,1 @@
-SegRap.github.io
+https://hilab-git.github.io/SegRap2025_Challenge/
