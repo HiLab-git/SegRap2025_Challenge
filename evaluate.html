@@ -107,6 +107,34 @@
         .submit-button:hover {
             background: var(--primary-dark);
         }
+
+        .tree::before {
+            color: rgb(0, 0, 0);
+            content: "Example:";
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .tree ul {
+            color: rgb(0, 0, 0);
+            font-size: 0.95em;
+            list-style-type: none;
+            margin-left: 10px;
+            padding-left: 0;
+        }
+
+        .tree li::before {
+            content: "├── ";
+            font-size: 0.9em;
+            margin-left: 10px;
+            color: rgb(0, 0, 0);
+        }
+
+        /* .tree li:last-child::before {
+            content: "└── ";
+            color: rgb(0, 0, 0);
+        } */
     </style>
 </head>
 
@@ -121,6 +149,7 @@
                     <a href="index.html">Home</a>
                     <a href="tasks.html">Tasks</a>
                     <a href="evaluate.html" class="active">Evaluate</a>
+                    <a href="prizes.html">Prizes</a>
                     <a href="leaderboard.html">Leaderboard</a>
                     <a href="organizing.html">Organizing</a>
                     <a href="contact.html">Contact</a>
@@ -138,11 +167,44 @@
             <div class="evaluate-content">
                 <div class="metric-name">Two-phase Challenge Submission</div>
                 <p class="metric-description">
-                    For the first phase (validation phase), participants can submit their segmentation results of the
-                    validation dataset to
-                    the organization team once per week. A maximum of 5 submissions are allowed during the validation
-                    stage to ensure fair
-                    evaluation and prevent overfitting.</p>
+                    For the first phase (validation phase), the participants are required to submit the output of their
+                    algorithms as a single compressed zip file to the organization team. The submitted zip files should
+                    be formatted like the one below. Make sure the results in the submitted zip file all be matched with
+                    the validation images one-to-one, which contains 2 predictions for task1 and 6 predictions for task2
+                    for each case. Otherwise, the results are considered invalid submissions and no score will be
+                    generated.
+                </p>
+                <div class="tree">
+                    <ul> results/
+                        <ul>
+                            <li>SegRap_0001
+                                <ul>
+                                    <li>GTVnx.nii.gz</li>
+                                    <li>GTVnd.nii.gz</li>
+                                </ul>
+                            </li>
+                            <li>…
+                                <ul>
+                                    <li>GTVnx.nii.gz</li>
+                                    <li>GTVnd.nii.gz</li>
+                                </ul>
+                            </li>
+                            <li>SegRap_xxxx
+                                <ul>
+                                    <li>GTVnx.nii.gz</li>
+                                    <li>GTVnd.nii.gz</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+                <br>
+                <p>
+                    <em>Note</em>: The participants are allowed to submit the results once per week. A maximum of 5
+                    submissions are allowed during the validation stage to ensure fair evaluation and prevent
+                    overfitting.
+                </p>
+
                 <br>
                 <p class="metric-description">
                     For the second phase (test phase), participants must prepare and submit their Docker containers
