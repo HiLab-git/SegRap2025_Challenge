@@ -1,0 +1,216 @@
+/* 全局重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全局变量 */
+:root {
+    --primary-gradient: linear-gradient(to right, #9c27b0 0%, #6a1b9a 100%);
+    --hover-gradient: linear-gradient(to right, #6a1b9a 0%, #4a148c 100%);
+    --text-primary: #115957;
+    --text-secondary: #0f1212;
+    --link-color: #9c27b0;
+    --background-light: #ffffff;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* 全局样式 */
+body {
+    font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-light);
+}
+
+/* Header 样式 */
+.site-header {
+    background: #DEEBF7;
+    padding: 35px 0 10px 0;
+    box-shadow: var(--shadow-md);
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-end;
+}
+
+/* Logo 样式 */
+.logo-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.logo {
+    max-height: 75px;
+    width: auto;
+}
+
+/* 右侧内容区域 */
+.content-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 500px;
+    min-width: auto; */
+    max-width: 100%;
+    min-width: auto;
+    padding: 10px 0;
+}
+
+/* 导航栏 */
+.nav-links {
+    display: flex;
+    gap: 0px;
+    justify-content: flex-end;
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* 基础导航链接样式 */
+.nav-links>a,
+.nav-item {
+    width: 100px;
+    /* 统一宽度 */
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links>a,
+.nav-item>a {
+    /* color: rgba(255, 255, 255, 0.9); */
+    color: #000000;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 24px;
+    width: 100%;
+    /* 填充父容器宽度 */
+    height: 100%;
+    /* 填充父容器高度 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 激活状态统一样式 */
+.nav-links>a.active,
+.nav-item>a.active {
+    background: #1FA1A1;
+    color: #ffffff;
+    box-shadow: var(--shadow-sm);
+    border-radius: 4px;
+}
+
+/* 悬停状态统一样式 */
+.nav-links>a:hover:not(.active),
+.nav-item>a:hover:not(.active) {
+    background: rgba(156, 39, 176, 0.15);
+    color: white;
+}
+
+/* 导航项容器 */
+.nav-item {
+    position: relative;
+}
+
+/* 下拉菜单 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    color: #9c27b0 !important;
+    padding: 10px 15px;
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    min-width: auto;
+    border-radius: 0;
+    height: auto;
+    line-height: 1.4;
+}
+
+.dropdown-content a:hover {
+    background-color: #f3e5f5;
+    color: #6a1b9a !important;
+}
+
+.nav-item:hover .dropdown-content {
+    display: block;
+}
+
+/* 下拉箭头 */
+.nav-item>a::after {
+    content: "▾";
+    margin-left: 5px;
+    font-size: 12px;
+    opacity: 0.8;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 主要内容区域 */
+.main-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    margin: 2rem auto;
+    padding: 40px;
+    max-width: 800px;
+}
+
+/* 标题样式 */
+.section-title {
+    font-size: 2.5em;
+    /* color: var(--text-primary); */
+    color: #000000;
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .content-section {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+}

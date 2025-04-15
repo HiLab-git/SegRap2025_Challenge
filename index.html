@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SegRap2025 Challenge</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        /* 页面特定样式 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr 1fr;
+            gap: 40px;
+            justify-content: start;
+        }
+
+        /* News section */
+        .news-section {
+            grid-column: 1 / -1;
+        }
+
+        .news-list {
+            color: #0f1212;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .news-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #064b43;
+            font-weight: 500;
+        }
+
+        .news-list li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #00bfa5;
+            font-weight: 300;
+        }
+
+        .news-list a {
+            color: #064b43;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .news-list a:hover {
+            color: #00897b;
+        }
+
+        /* Column styles */
+        .column {
+            font-size: 0.85em;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .column:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .column h2 {
+            font-size: 1.8em;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        /* Features list */
+        .features-list {
+            list-style: none;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+            font-weight: 300;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .checkmark {
+            color: #7FBFB0;
+        }
+
+        /* Collaborators list */
+        .collaborators-list {
+            list-style: none;
+            padding: 0;
+            display: block;
+        }
+
+        .collaborators-list li {
+            padding: 6px 0;
+            transition: all 0.2s ease;
+            line-height: 1.3;
+            font-size: 0.95em;
+            font-weight: 300;
+        }
+
+        .collaborators-list li:hover {
+            color: var(--text-primary);
+            transform: translateX(4px);
+        }
+
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-header">
+        <div class="header-image" style="text-align: center;">
+            <img src="logo_web.png" alt="SegRap Logo" style="width: 50%; height: auto;">
+        </div>
+        <div class="header-container">
+            <div class="content-section">
+                <nav class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="tasks.html">Tasks</a>
+                    <a href="evaluate.html">Evaluate</a>
+                    <a href="leaderboard.html">Leaderboard</a>
+                    <a href="organizing.html">Organizing</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <!-- News section -->
+        <section class="news-section">
+            <!-- <img src="logo_h.png" alt="SegRap Image" style="max-width: 100%; height: auto; margin-bottom: 20px;"> -->
+            <h1 class="section-title">Abstract</h1>
+            <ul class="news-list">
+                Radiotherapy is a critical cancer treatment that uses external beam radiation to kill cancer cells.
+                Effective treatment planning, which determines radiation dose distribution for tumor volumes, is
+                essential to maximize
+                the likelihood of a cure while minimizing toxicity. Gross Tumor Volume (GTV) and Clinical Target
+                Volume (CTV) are two
+                key targets in radiotherapy planning. GTV is the visible tumor extent on Computed Tomography (CT)
+                scans, while CTV
+                encompasses GTV and describes the extent of microscopic, unimageable tumor spread. Accurate
+                delineation of GTV and CTV
+                is essential in radiotherapy planning, however, manual slice-by-slice annotation on CT scans is
+                time-consuming and
+                labor-intensive for radiation oncologists. Automating this process can significantly reduce planning
+                time and enhance
+                radiotherapy efficiency. <br>
+                Based on the success of SegRap2023, SegRap2025 aims to address ongoing challenges in GTV
+                segmentation and firstly focus
+                on the Lymph Node (LN) CTV segmentation. It provides two datasets collected from diverse cohorts:
+                one with data from 260
+                NPC patients annotated for GTV, and another with 402 patients annotated for LN CTV. It also provides
+                an unlabeled
+                dataset of CT scans from 500 patients to support model training. Based on the extensive and
+                comprehensive datasets, two
+                sub-tasks will be held in SegRap2025:
+
+                <li><strong>Task01</strong>: GTV Segmentation</li>
+                <li><strong>Task02</strong>: LN CTV Segmentation</li>
+
+                We believe that these algorithms will have the potential to support clinical manual delineation, enhance
+                research on
+                radiation dose calculation, and improve efficiency of radiotherapy treatment planning.
+
+            </ul>
+        </section>
+        <!-- Dates section -->
+        <section class="news-section">
+            <h1 class="section-title">Important Dates</h1>
+            <ul class="news-list">
+                <li><strong>Registration opens</strong>: May 1st (12:00 AM GMT), 2025</li>
+                <li><strong>elease of training data</strong>: May 10th (12:00 AM GMT), 2025</li>
+                <li><strong>Release of validation data</strong>: June 30th (12:00 AM GMT), 2025</li>
+                <li><strong>Docker and short paper submission opens</strong>: Aug. 10th (12:00 AM GMT), 2025</li>
+                <li><strong>Submission deadline</strong>: Aug. 31st (12:00 AM GMT), 2025</li>
+                <li><strong>Announcement of final results</strong>: Sep. 23th and 27th, 2025</li>
+            </ul>
+        </section>
+
+        <!-- Reference section -->
+        <section class="news-section">
+            <h1 class="section-title">References</h1>
+            <ul class="news-list">
+                You can find our previous challenges here:
+                <a href="https://segrap2023.grand-challenge.org/"><strong>SegRap2023</strong></a>, associated paper with
+                summary of
+                the results can be downloaded <a
+                    href="https://doi.org/10.1016/j.media.2024.103447"><strong>here</strong></a>, and
+                algorithms from top
+                teams can be found at: <a
+                    href="https://drive.google.com/file/d/1uI7idYOF87G6Bjx1tes_VSteXpbrT3kD/view"><strong>Google-Drive</strong></a>.
+                <br>
+                <br>
+                Please cite the following when using the SegRap dataset in your research:
+                <li><a href="https://doi.org/10.1016/j.media.2024.103447">X. Luo et al. Segrap2023: A benchmark of
+                        organs-at-risk and gross tumor volume segmentation for radiotherapy planning
+                        of nasopharyngeal carcinoma. Medical image analysis 2025, 101: 103447.</a></li>
+                <li><a href="https://doi.org/10.1038/s41597-024-03890-0">X. Luo et al. A multicenter dataset for lymph
+                        node clinical target volume delineation of
+                        nasopharyngeal carcinoma.
+                        Scientific Data 11, 1085 (2024).</a></li>
+
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

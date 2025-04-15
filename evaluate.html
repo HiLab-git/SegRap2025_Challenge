@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SegRap2025 Challenge</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .evaluate-section {
+            margin-bottom: 60px;
+        }
+
+        .evaluate-content {
+            background: white;
+            border-radius: 12px;
+            padding: 10px;
+            margin-bottom: 0px;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .leaderboard-table th,
+        .leaderboard-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .leaderboard-table th {
+            font-weight: 500;
+            color: var(--text-primary);
+            background: #f8f9fa;
+        }
+
+        .leaderboard-table td {
+            color: var(--text-secondary);
+        }
+
+        .rank {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .team-name {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .metric-value {
+            font-family: monospace;
+        }
+
+        .evaluation-metrics {
+            margin-top: 20px;
+        }
+
+        .metric-item {
+            margin-bottom: 20px;
+        }
+
+        .metric-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 20px;
+            margin-bottom: 8px;
+            margin-top: 0px;
+        }
+
+        .metric-description {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            line-height: 1.5;
+            width: 100%;
+        }
+
+        .metric-description ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .metric-description li {
+            margin-bottom: 8px;
+        }
+
+        .submit-section {
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .submit-button:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-header">
+        <div class="header-image" style="text-align: center;">
+            <img src="logo_web.png" alt="SegRap Logo" style="width: 50%; height: auto;">
+        </div>
+        <div class="header-container">
+            <div class="content-section">
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="tasks.html">Tasks</a>
+                    <a href="evaluate.html" class="active">Evaluate</a>
+                    <a href="leaderboard.html">Leaderboard</a>
+                    <a href="organizing.html">Organizing</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <!-- Leaderboards Section -->
+        <section id="leaderboards" class="evaluate-section">
+            <h1 class="section-title">Evaluate and Ranking</h1>
+
+            <!-- Segmentation Leaderboard -->
+            <div class="evaluate-content">
+                <div class="metric-name">Two-phase Challenge Submission</div>
+                <p class="metric-description">
+                    For the first phase (validation phase), participants can submit their segmentation results of the
+                    validation dataset to
+                    the organization team once per week. A maximum of 5 submissions are allowed during the validation
+                    stage to ensure fair
+                    evaluation and prevent overfitting.</p>
+                <br>
+                <p class="metric-description">
+                    For the second phase (test phase), participants must prepare and submit their Docker containers
+                    along with a short paper
+                    outlining their method.
+                </p>
+            </div>
+
+            <!-- Evaluation metrics -->
+            <div class="evaluate-content">
+                <div class="metric-name">Evaluation metrics</div>
+                <p class="metric-description">
+                    Two classical medical segmentation metrics: <strong>Dice Similarity Coefficient (DSC)</strong>, and
+                    <strong>normalized surface dice (NSD)</strong>, will be used to assess different aspects of the
+                    performance of the segmentation methods.
+                </p>
+            </div>
+
+            <!-- Ranking -->
+            <div class="evaluate-content">
+                <div class="metric-name">Ranking</div>
+                <p class="metric-description">
+                    Firstly, for each organ, we calculate the average DSC and NSD across all the patients respectively.
+                    Secondly, each
+                    participant will be ranked based on the organ-level DSC and NSD; each participant will have 2
+                    &times; 2 or 6 &times; 2 rankings.
+                    Finally, average all these rankings and then normalize them by the number of teams. At the same
+                    time, we will take the
+                    statistical ranking. (Allow equal teams if there is no significant difference).</p>
+                <br>
+                <p class="metric-description">
+                    In addition, if the submissions have some missing results on test cases, the corresponding organ's
+                    DSC and NSD will be
+                    set to 0 and 0 for ranking. For example, a test case missed an organ and the ranking value of this
+                    organ in average DSC
+                    and NSD will degrade.
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
