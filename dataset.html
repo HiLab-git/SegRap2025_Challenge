@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SegRap2025 Challenge</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .task-section {
+            margin-bottom: 60px;
+        }
+
+        .task-content {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .task-content li {
+            color: #064b43;
+            margin-bottom: 0.3em;
+            line-height: 1.5;
+        }
+
+        .task-overview {
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .evaluation-metrics {
+            margin-top: 20px;
+        }
+
+        .metric-item {
+            margin-bottom: 20px;
+        }
+
+        .metric-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 20px;
+            margin-bottom: 8px;
+            margin-top: 0px;
+        }
+
+        .metric-description {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .news-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-top: 1%;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            color: #000000;
+            font-size: 0.95em;
+            font-weight: 400;
+        }
+
+        .news-list li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #00bfa5;
+        }
+
+        .news-list a {
+            color: #00bfa5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .news-list a:hover {
+            color: #00897b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-header">
+        <div class="header-image" style="text-align: center;">
+            <img src="logo_web.png" alt="SegRap Logo" style="width: 50%; height: auto;">
+        </div>
+        <div class="header-container">
+            <div class="content-section">
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="tasks.html">Tasks</a>
+                    <a href="dataset.html" class="active">Dataset</a>
+                    <a href="evaluate.html">Evaluate</a>
+                    <a href="prizes.html">Prizes</a>
+                    <a href="leaderboard.html">Leaderboard</a>
+                    <a href="organizing.html">Organizing</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <!-- Overview Section -->
+        <section id="overview" class="task-section">
+            <h1 class="section-title">Description</h1>
+            <div class="metric-name">Task01: GTV segmentation</div>
+            <p class="metric-description">
+                SegRap2025 Dataset will consist of CT images collected by Siemens CT scanners with the following
+                scanning conditions:
+                bulb voltage, 120 kV; current, 300 mA; scan thickness, 3.0 mm; resolution, 1024 &times; 1024 or 512
+                &times; 512; injected contrast
+                agent, iohexol (volume, 60~80 mL; rate, 2 mL/s; without delay). The dataset consists of clinically
+                required non-contrast
+                CT images (ncCT) and contrast CT images (ceCT) from patients with nasopharyngeal cancer before
+                treatment.
+            </p>
+            <br>
+            <p class="metric-description">
+                The dataset consists of clinically required <strong>non-contrast CT images (ncCT)</strong> and
+                <strong>contrast CT images (ceCT)</strong> from patients with nasopharyngeal cancer before
+                treatment.
+            </p>
+            <ul class="news-list">
+                <li>Training data will consist of CT images from <strong>120 patients</strong> with a
+                    corresponding
+                    label map, as well as <strong>500 unlabeled cases</strong>.</li>
+                <li>Validation data will consist of CT images from <strong>20 patients</strong>.</li>
+                <li>Testing data will consist of CT images from two cohorts: <strong>60 patients from internal testing
+                        cohort</strong>, and <strong>60 patients from external testing cohort</strong>.
+                </li>
+            </ul>
+            <!-- <br> -->
+            <p class="metric-description">
+                <em>Note:</em> All GTVs were annotated individually by oncologists using MIM Software and ITKSNAP,
+                the annotation of each organ was also stored individually. The expected output from your algorithm
+                should be a set of label maps.
+            </p>
+            <br>
+
+            <div class="metric-name">Task02: LN CTV Segmentation</div>
+            <p class="metric-description">
+                SegRap2025 Dataset will consists of CT images from Sichuan Cancer Hospital are collected by a
+                Brilliance CT Big Bore
+                system from Philips Healthcare (Philips Healthcare, Best, the Netherlands), with the following
+                scanning conditions: bulb
+                voltage at 120 kV, current ranging from 275 to 375 mA, slice thickness of 3.0 mm, and full
+                resolution of 512 &times; 512. An
+                injected contrast agent, iohexol, was used during the ceCT examination. Similarly, CT images from
+                Sichuan Provincial
+                People's Hospital, The First Affiliated Hospital of University of Science and Technology of China
+                and Southern Medical
+                University were acquired using a Somatom Definition AS 40 system from Siemens Healthcare (Siemens
+                Healthcare, Forcheim,
+                Germany), with the following conditions: bulb voltage ranging from 120 to140 kV, current ranging
+                from 280 to 380 mA,
+                slice thickness of 3.0 mm, and full resolution of 512 &times; 512. CT images from Daguan Hospital of
+                Chengdu Jinjiang were
+                acquired using a Somatom Definition AS 40 system from Siemens Healthcare (Siemens Healthcare,
+                Forcheim, Germany), with
+                the following conditions: bulb voltage 120 kV, current ranging from 200 to 250 mA, slice thickness
+                of 2.5 mm, and full
+                resolution of 512 &times; 512.
+            </p>
+            <br>
+            <p class="metric-description">
+                The dataset consists of clinically required <strong>non-contrast CT images (ncCT)</strong> and/or
+                <strong>contrast CT images (ceCT)</strong> from patients with nasopharyngeal cancer before
+                treatment.
+            </p>
+            <ul class="news-list">
+
+                <li>Training data will consist of CT images from <strong>262 patients from five cohorts</strong>
+                    (150 paired CT, 32 ncCT and 80 ceCT) with
+                    a corresponding label map, as well as <strong>500 unlabeled cases</strong>.</li>
+                <li>Validation data will consist of <strong>40 patients from external testing
+                        cohort</strong>: <em>20 with paired CT</em>, <em>10 with only ncCT</em>, and <em>10 with
+                        only ceCT</em>.
+                </li>
+                <li>Testing data will consist of <strong>100 patients from external testing
+                        cohort</strong>: <em>40 with paired CT</em>, <em>30 with only ncCT</em>, and <em>30 with
+                        only ceCT</em>.</li>
+            </ul>
+            <!-- <br> -->
+            <p class="metric-description">
+                <em>Note:</em> All LN CTVs were annotated individually by oncologists using MIM Software and
+                ITKSNAP, the annotation of each organ was
+                also stored individually. The expected output from your algorithm should be a set of label maps.
+            </p>
+            <br>
+
+            <h2 class="section-title">Download</h2>
+            <div class="task-content">
+                <div class="metric-name">Task01: GTV Segmentation</div>
+                <p class="metric-description">
+                    The training data (with labels) and validation data (without lables) can be downloaded at: <a
+                        href="https://drive.google.com/drive/folders/115mzmNlZRIewnSR2QFDwW_-RkNM0LC9D">GoogleDrive</a>
+                    and <a
+                        href="https://pan.baidu.com/s/1KYH4j5CQO_qx7wg7GkkR7Q?pwd=2023#list/path=%2F">BaiduNetDisk</a>.
+                    The unzipped password is <em>segrap2023@uestc</em>.
+                </p>
+                <br>
+
+                <div class="metric-name">Task02: LN CTV Segmentation</div>
+                <p class="metric-description">
+                    The training data (with labels) can be downloaded at: <a
+                        href="https://figshare.com/articles/dataset/LNCTVSeg-DataSet_zip/26793622?file=48684664">here</a>,
+                    and the unzipped passowrd is <em>lnctvseg@uestc</em>.
+                    <br>
+                    The validation data (without labels) can be
+                    downloaded at: <a
+                        href="https://drive.google.com/file/d/1vcEX4aLnwi32c10ronFbdxMy49JDhjtQ/view?usp=sharing">GoogleDrive</a>
+                    and <a href="https://pan.baidu.com/s/18ZKqRBOWR0BWFQ9Z6HXv2w?pwd=2025">BaiduNetDisk</a>.
+                    <br>
+                </p>
+                <br>
+
+                <div class="metric-name">Supplementary unlabeled data</div>
+                <p class="metric-description">
+                    A total of 500 <strong>unlabeled images</strong> are provided at: <a
+                        href="https://drive.google.com/file/d/1pfYGXHg62gV-77LYv-U-9_hdQh81KYHb/view?usp=sharing">GoogleDrive</a>
+                    and <a href="https://pan.baidu.com/s/1JzayTGV-EBuXYeiLhGlfew?pwd=2025">BaiduNetDisk</a>.
+                    Participants
+                    may explore
+                    self-supervised or semi-supervised learning strategies to enhance model generalizability.
+                </p>
+                <br>
+
+                <div class="metric-name">Note</div>
+                <ul class="news-list">
+                    <li>Please fill out the <a
+                            href="https://drive.google.com/file/d/1KvEB41N4PvYyAAha--xDrCbvUEWg9Ljm/view?usp=sharing">EndUserAgreement</a>,
+                        and email a scan of the signed document to <em>segrap2025@gmail.com</em>. Then, we will provide
+                        you with the unzipped password for the Task02 validation set and Supplementary unlabeled data.
+                    </li>
+                    <li>SegRap2025 focuses on the GTV and LN CTV segmentation. Participants are encouraged to leverage
+                        <strong>OAR anatomical information</strong> to support GTV segmentation, but segmentation of
+                        OARs are not necessary.
+                    </li>
+                    <li>The use of <strong>foundation models</strong> is permitted, but additional external data are not
+                        allowed.
+                    </li>
+                </ul>
+                <br>
+            </div>
+
+        </section>
+
+
+    </main>
+</body>
+
+</html>

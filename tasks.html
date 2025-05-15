@@ -49,6 +49,7 @@
             color: var(--text-secondary);
             font-size: 0.95em;
             line-height: 1.5;
+            margin-left: 20px;
         }
 
         .news-list {
@@ -63,7 +64,7 @@
             margin-top: 20px;
             margin-bottom: 20px;
             line-height: 1.5;
-            color: #064b43;
+            color: #000000;
             font-weight: 500;
         }
 
@@ -97,6 +98,7 @@
                 <nav class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="tasks.html" class="active">Tasks</a>
+                    <a href="dataset.html">Dataset</a>
                     <a href="evaluate.html">Evaluate</a>
                     <a href="prizes.html">Prizes</a>
                     <a href="leaderboard.html">Leaderboard</a>
@@ -120,133 +122,39 @@
             </div>
 
             <!-- Task01 -->
-            <h2 class="section-title">Task01: GTV Segmentation</h2>
-            <div class="task-content">
-                <div class="metric-name">Task Description</div>
-                <p class="metric-description">
-                    Accurately delineate Gross Target Volume of nasopharynx (GTVnx, also named GTVp) and Gross
-                    Target Volume of lymph node (GTVnd) within paired non-contrast computed tomography
-                    (ncCT) and contrast computed tomography (ceCT) images.
-                </p>
-                <br>
-                <div class="metric-name">Dataset Description</div>
-                <p class="metric-description">
-                    SegRap2025 Dataset will consist of CT images collected by Siemens CT scanners with the following
-                    scanning conditions:
-                    bulb voltage, 120 kV; current, 300 mA; scan thickness, 3.0 mm; resolution, 1024 &times; 1024 or 512
-                    &times; 512; injected contrast
-                    agent, iohexol (volume, 60~80 mL; rate, 2 mL/s; without delay). The dataset consists of clinically
-                    required non-contrast
-                    CT images (ncCT) and contrast CT images (ceCT) from patients with nasopharyngeal cancer before
-                    treatment.
-                </p>
-                <br>
-                <p class="metric-description">
-                    The dataset consists of clinically required <strong>non-contrast CT images (ncCT)</strong> and
-                    <strong>contrast CT images (ceCT)</strong> from patients with nasopharyngeal cancer before
-                    treatment.
-                </p>
-                <ul class="news-list">
-                    <li>Training data will consist of CT images from <strong>120 patients</strong> with a
-                        corresponding
-                        label map, as well as <strong>500 unlabeled cases</strong>.</li>
-                    <li>Validation data will consist of CT images from <strong>20 patients</strong>.</li>
-                    <li>Testing data will consist of CT images from <strong>60 patients from internal testing
-                            cohort</strong> and
-                        <strong>60 patients from external testing cohort</strong>.
-                    </li>
-                </ul>
-                <br>
-                <p class="metric-description">
-                    <em>Note:</em> All GTVs were annotated individually by oncologists using MIM Software and ITKSNAP,
-                    the
-                    annotation of each organ
-                    was also stored individually. The expected output from your algorithm should be a set of label
-                    maps.
-                </p>
-                <br>
-                <div class="metric-name">Dataset Download</div>
-                <p class="metric-description">
-                    Coming soon!
-                    <!-- The training set with labels and the validation set without labels can be downloaded without any
-                            additional requirements,
-                            <a href="https://drive.google.com/drive/folders/115mzmNlZRIewnSR2QFDwW_-RkNM0LC9D">Google-Drive</a>,
-                            <a href="https://pan.baidu.com/share/init?surl=KYH4j5CQO_qx7wg7GkkR7Q&pwd=2023">BaiduYun</a>, the
-                            unzipped
-                            password is <em>segrap2023@uestc</em>. -->
-
-                </p>
-            </div>
-
-            <!-- Task02 -->
-            <h2 class="section-title">Task02: LN CTV Segmentation</h2>
-            <div class="metric-name">Task Description</div>
-            <!-- <h3 class="task-description">Task Description</h3> -->
+            <!-- <h2 class="section-title">Task01: GTV Segmentation</h2> -->
+            <!-- <div class="task-content"> -->
+            <div class="metric-name">Task01: GTV Segmentation</div>
             <p class="metric-description">
-                Accurately delineate 6 LN CTVs: L_Ib, L_II+III+Va, L_IV+Vb+Vc, R_Ib, R_II+III+Va, and R_IV+Vb+Vc
-                within paired ncCT and ceCT images or ncCT/ceCT images.
+                Task01 (GTV segmentation) emphasizes <strong>model generalizability</strong>. <br>
+                <br>
+
+                Models are supposed to accurately delineate Gross Target Volume of nasopharynx (<strong>GTVnx</strong>,
+                also named GTVp)
+                and Gross Target Volume of lymph node (<strong>GTVnd</strong>) within paired non-contrast computed
+                tomography (ncCT) and
+                contrast computed tomography (ceCT) images. <br>
+
+                <br>
+                The testing data are from two cohorts: one internal cohort and one external cohort.
             </p>
             <br>
-            <div class="metric-name">Dataset Description</div>
-            <!-- <h3 class="data-description">Dataset Description</h3> -->
-            <p class="metric-description">
-                SegRap2025 Dataset will consists of CT images from Sichuan Cancer Hospital are collected by a
-                Brilliance CT Big Bore
-                system from Philips Healthcare (Philips Healthcare, Best, the Netherlands), with the following
-                scanning conditions: bulb
-                voltage at 120 kV, current ranging from 275 to 375 mA, slice thickness of 3.0 mm, and full
-                resolution of 512 &times; 512. An
-                injected contrast agent, iohexol, was used during the ceCT examination. Similarly, CT images from
-                Sichuan Provincial
-                People's Hospital, The First Affiliated Hospital of University of Science and Technology of China
-                and Southern Medical
-                University were acquired using a Somatom Definition AS 40 system from Siemens Healthcare (Siemens
-                Healthcare, Forcheim,
-                Germany), with the following conditions: bulb voltage ranging from 120 to140 kV, current ranging
-                from 280 to 380 mA,
-                slice thickness of 3.0 mm, and full resolution of 512 &times; 512. CT images from Daguan Hospital of
-                Chengdu Jinjiang were
-                acquired using a Somatom Definition AS 40 system from Siemens Healthcare (Siemens Healthcare,
-                Forcheim, Germany), with
-                the following conditions: bulb voltage 120 kV, current ranging from 200 to 250 mA, slice thickness
-                of 2.5 mm, and full
-                resolution of 512 &times; 512.
-            </p>
-            <br>
-            <p class="metric-description">
-                The dataset consists of clinically required <strong>non-contrast CT images (ncCT)</strong> and/or
-                <strong>contrast CT images (ceCT)</strong> from patients with nasopharyngeal cancer before
-                treatment.
-            </p>
-            <ul class="news-list">
 
-                <li>Training data will consist of CT images from <strong>262 patients from five cohorts</strong>
-                    (150 paired CT, 32 ncCT and 90 ceCT) with
-                    a corresponding label map, as well as <strong>500 unlabeled cases</strong>.</li>
-                <li>Validation data will consist of CT images from <strong>40 patients from external testing
-                        cohort</strong> (20 paired CT, 10 ncCT and 10
-                    ceCT).</li>
-                <li>Testing data will consist of CT images from <strong>100 patients from external testing
-                        cohort</strong> (40 paired CT, 30 ncCT and 30
-                    ceCT).</li>
-            </ul>
-            <br>
+            <div class="metric-name">Task02: LN CTV Segmentation</div>
             <p class="metric-description">
-                <em>Note:</em> All LN CTVs were annotated individually by oncologists using MIM Software and
-                ITKSNAP, the annotation of each organ was
-                also stored individually. The expected output from your algorithm should be a set of label maps.
-            </p>
-            <br>
-            <div class="metric-name">Dataset Download</div>
-            <!-- <h3 class="data-description">Dataset Download</h3> -->
-            <p class="metric-description">
-                Coming soon!
-                <!-- The training set with labels can be downloaded without any additional requirements at:
-                                <a
-                                    href="https://figshare.com/articles/dataset/LNCTVSeg-DataSet_zip/26793622?file=48684664">LNCTVSeg</a>,
-                                the unzipped password is <em>lnctvseg@uestc</em>. -->
+                Task02 (LN CTV segmentation) evaluates model's ability to handle <strong>missing modality</strong>
+                problem. <br>
+                <br>
 
+                Models are supposed to accurately delineate 6 LN CTVs: L_Ib, L_II+III+Va, L_IV+Vb+Vc, R_Ib,
+                R_II+III+Va, and R_IV+Vb+Vc within paired ncCT and ceCT images or ncCT/ceCT images. <br>
+
+                <br>
+                The validation and
+                testing data are come from one external cohort, comprising cases with: <em>both ncCT and ceCT</em>
+                scans; <em>only ncCT</em> scans; and <em>only ceCT</em> scans.
             </p>
+            <br>
         </section>
 
 

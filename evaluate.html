@@ -148,6 +148,7 @@
                 <nav class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="tasks.html">Tasks</a>
+                    <a href="dataset.html">Dataset</a>
                     <a href="evaluate.html" class="active">Evaluate</a>
                     <a href="prizes.html">Prizes</a>
                     <a href="leaderboard.html">Leaderboard</a>
@@ -170,31 +171,17 @@
                     For the first phase (validation phase), the participants are required to submit the output of their
                     algorithms as a single compressed zip file to the organization team. The submitted zip files should
                     be formatted like the one below. Make sure the results in the submitted zip file all be matched with
-                    the validation images one-to-one, which contains 2 predictions for task1 and 6 predictions for task2
-                    for each case. Otherwise, the results are considered invalid submissions and no score will be
-                    generated.
+                    the validation images one-to-one (2 classes for Task01 and 6 classes for Task02). Otherwise, the
+                    results are considered invalid submissions and no score will be generated.
                 </p>
                 <div class="tree">
-                    <ul> results/
-                        <ul>
-                            <li>SegRap_0001
-                                <ul>
-                                    <li>GTVnx.nii.gz</li>
-                                    <li>GTVnd.nii.gz</li>
-                                </ul>
-                            </li>
-                            <li>…
-                                <ul>
-                                    <li>GTVnx.nii.gz</li>
-                                    <li>GTVnd.nii.gz</li>
-                                </ul>
-                            </li>
-                            <li>SegRap_xxxx
-                                <ul>
-                                    <li>GTVnx.nii.gz</li>
-                                    <li>GTVnd.nii.gz</li>
-                                </ul>
-                            </li>
+                    <ul> team_name/
+                        <ul> Task0*_results/
+                            <ul>
+                                <li>SegRap_0001.nii.gz</li>
+                                <li>......</li>
+                                <li>SegRap_xxxx.nii.gz</li>
+                            </ul>
                         </ul>
                     </ul>
                 </div>
@@ -227,20 +214,18 @@
             <div class="evaluate-content">
                 <div class="metric-name">Ranking</div>
                 <p class="metric-description">
-                    Firstly, for each organ, we calculate the average DSC and NSD across all the patients respectively.
-                    Secondly, each
-                    participant will be ranked based on the organ-level DSC and NSD; each participant will have 2
-                    &times; 2 or 6 &times; 2 rankings.
-                    Finally, average all these rankings and then normalize them by the number of teams. At the same
-                    time, we will take the
-                    statistical ranking. (Allow equal teams if there is no significant difference).</p>
+                    Firstly, for each cohort (set), we calculate the average DSC and NSD across all the patients for
+                    each class, respectively. Secondly, each participant will be ranked based on the class-level DSC and
+                    NSD, with 2 &times; 2 or 6 &times; 2 rankings. Then, rankings for all classes are averaged in each
+                    cohort (set). Finally, rankings for all cohorts (sets) are averaged and then normalized by the
+                    number of teams. At the same time, we will take the statistical ranking. (Allow equal teams if there
+                    is no significant difference).</p>
                 <br>
                 <p class="metric-description">
-                    In addition, if the submissions have some missing results on test cases, the corresponding organ's
-                    DSC and NSD will be
-                    set to 0 and 0 for ranking. For example, a test case missed an organ and the ranking value of this
-                    organ in average DSC
-                    and NSD will degrade.
+                    In addition, if the submissions have some missing results on test cases, the corresponding class's
+                    DSC and NSD will be set to 0 and 0 for ranking. For example, a test case missed a class and the
+                    ranking value of this
+                    class in average DSC and NSD will degrade.
                 </p>
             </div>
         </section>
