@@ -71,6 +71,14 @@
             margin-top: 0px;
         }
 
+        .metric-name-sub {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 8px;
+            margin-top: 0px;
+        }
+
         .metric-description {
             color: var(--text-secondary);
             font-size: 0.95em;
@@ -131,6 +139,41 @@
             color: rgb(0, 0, 0);
         }
 
+        .news-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .news-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-top: 1%;
+            /* margin-bottom: 20px; */
+            line-height: 1.3;
+            color: #000000;
+            font-size: 0.95em;
+            font-weight: 400;
+        }
+
+        .news-list li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #00bfa5;
+        }
+
+        /* .news-list a {
+            color: #00bfa5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        } */
+
+        .news-list a:hover {
+            color: #00897b;
+        }
+
         /* .tree li:last-child::before {
             content: "└── ";
             color: rgb(0, 0, 0);
@@ -166,7 +209,8 @@
 
             <!-- Segmentation Leaderboard -->
             <div class="evaluate-content">
-                <div class="metric-name">Two-phase Challenge Submission</div>
+                <div class="metric-name">1. Two-phase Challenge Submission</div>
+                <div class="metric-name-sub"><strong>1) Validation Phase</strong></div>
                 <p class="metric-description">
                     For the first phase (validation phase), the participants are required to submit the output of their
                     algorithms as a single compressed zip file to the organization team (<em>segrap2025@163.com</em>).
@@ -193,20 +237,76 @@
                 </p>
 
                 <br>
+                <div class="metric-name-sub"><strong>2) Testing Phase</strong></div>
                 <p class="metric-description">
                     For the second phase (test phase), participants must prepare and submit their <strong>Docker
-                        containers</strong>
-                    along with a <strong>short paper</strong> outlining their method. The Docker container must satisfy
-                    the memory
-                    constraints (GPU memory usage less than 24 GB, CPU memory usage less than 64 GB) and execution time
-                    constraint (no more than 3 minutes per case). The Docker submission tutorial can be found <a
-                        href="https://github.com/HiLab-git/SegRap2025_Docker">here</a>.
+                        containers</strong> along with a <strong>short paper</strong> outlining their method before 31st
+                    August 2025.
+                <p>
+                    <br>
+
+                <p class="metric-description"> <em><strong>Docker container:</strong></em></p>
+                <ul class="news-list">
+                    <li>The Docker submission tutorial can be found <a
+                            href="https://github.com/HiLab-git/SegRap2025_Docker">here</a>.</li>
+                    <li>Memory constraint: GPU memory usage less than 24 GB, CPU memory usage less than 64 GB</li>
+                    <li>Execution time constraint: no more than 3 minutes per case</li>
+                    <li>Once you successfully build your Docker container, save it to a zipped file
+                        '<span style="color: red;">Task_{Task_id}_{TeamName}.zip</span>'
+                        and upload to cloud
+                        platform such as <a href="https://workspace.google.com/products/drive/">Google Drive</a> and <a
+                            href="https://wangpan.baidu.com/">BaiduNetDisk</a>. To submit your algorithm we ask you to
+                        send us the download link and step-by-step command to <strong>segrap2025@163.com</strong> with
+                        the Subject '<span style="color: red;">SegRap2025 Testing Phase Submission - Task_id TeamName
+                            Docker Container</span>'.
+                    </li>
+                </ul>
+
+                <br>
+                <p class="metric-description"><em><strong>Short paper:</strong></em> please provide a description of
+                    your model highlighting the main features using Template <a
+                        href="https://conferences.miccai.org/2025/files/downloads/MICCAI2025-LaTeX-Template.zip">Latex</a>
+                    or <a href="https://conferences.miccai.org/2025/files/downloads/MICCAI2025-Word-Template.zip">MS
+                        Word</a>. Basic information and the description of the model must include the following
+                    details:
                 </p>
+                <ul class="news-list">
+                    <li>Team name, Team members (names, emails, affiliations)</li>
+                    <li>Framework (ie, MONAI, nnUNet, etc.)</li>
+                    <li>Model architecture</li>
+                    <li>Number of layers</li>
+                    <li>Convolution kernel size</li>
+                    <li>Initialization</li>
+                    <li>Optimizer</li>
+                    <li>Cross-validation used?</li>
+                    <li>Number of epochs</li>
+                    <li>Number of trainable parameters</li>
+                    <li>Learning Rate and schedule</li>
+                    <li>Loss Function</li>
+                    <li>Dimensionality of input/output (ie, 2D, 3D, 2.5D, etc.)</li>
+                    <li>Batch Size</li>
+                    <li>Preprocessing steps used (data normalization, creation of patches, etc.)</li>
+                    <li>Data Augmentation steps (rotation, flipping, scaling, blur, noise, etc.)</li>
+                    <li>Pretrained model used? (allowed, but it needs to be publicly available)</li>
+                    <li>Number of models trained for final submission</li>
+                    <li>Post-Processing Steps (ensemble network, voting, label fusion, etc.)</li>
+                    <li>Clearly state which aspects are original work (if any) or already existing work</li>
+                    <li>Include relevant citations, as well as if existing code/software libraries/packages were used
+                    </li>
+                    <li>Which cases were included in the training and testing (all cases, only labeled cases, only
+                        paired cases, etc.)</li>
+                    <li>Training/validation/testing data splits</li>
+                    <li>Hyperparameter tuning performed</li>
+                    <li>Training time</li>
+                </ul>
+
+
+
             </div>
 
             <!-- Evaluation metrics -->
             <div class="evaluate-content">
-                <div class="metric-name">Evaluation metrics</div>
+                <div class="metric-name">2. Evaluation metrics</div>
                 <p class="metric-description">
                     Two classical medical segmentation metrics: <strong>Dice Similarity Coefficient (DSC)</strong>, and
                     <strong>normalized surface dice (NSD)</strong>, will be used to assess different aspects of the
@@ -216,7 +316,7 @@
 
             <!-- Ranking -->
             <div class="evaluate-content">
-                <div class="metric-name">Ranking</div>
+                <div class="metric-name">3. Ranking</div>
                 <p class="metric-description">
                     Firstly, for each cohort (set), we calculate the average DSC and NSD across all the patients for
                     each class, respectively. Secondly, each participant will be ranked based on the class-level DSC and
